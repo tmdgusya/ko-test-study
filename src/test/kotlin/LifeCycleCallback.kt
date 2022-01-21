@@ -1,7 +1,11 @@
+import hooks.ResetDatabaseHooks
+import hooks.resetDatabase
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.string.shouldHaveLength
 
 class LifeCycleCallback : FunSpec({
+
+  beforeTest(resetDatabase)
 
   beforeEach {
     println("Hello from $it")
